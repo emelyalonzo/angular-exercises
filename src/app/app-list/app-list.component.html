@@ -1,0 +1,27 @@
+<div
+    class="app-list">
+    <div
+        *ngFor="let avenger of avengers"
+        class="app-list__element"
+        [ngClass]="{ 'app-list__element--active': avenger.isActive }"
+        (click)="onClickAvenger(avenger)">
+        <div class="avenger__thumbnail">
+            <img
+                [src]="avenger.img"
+                class="avenger__img">
+        </div>
+        <div class="avenger__info">
+            <p class="avenger__hero">{{ avenger.hero }}</p>
+            <p class="avenger__name">{{ avenger.name }}</p>
+            <a
+                [href]="avenger.link"
+                class="avenger__link"
+                target="_blank"
+            >More info</a>
+        </div>
+    </div>
+    <div class="app-list__active-elements">
+        <p *ngIf="activeElements; else noActiveElements">En la lista hay {{ activeElements }} elementos activos</p>
+        <ng-template #noActiveElements>En la lista no hay elementos activos</ng-template>
+    </div>
+</div>

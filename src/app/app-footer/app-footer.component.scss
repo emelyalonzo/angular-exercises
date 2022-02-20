@@ -1,0 +1,13 @@
+.app-footer {
+    padding: 40px;
+    background-color: darkred;
+    display: flex;
+    justify-content: space-around;
+    &__link {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            color: rgb(172, 101, 101);
+        }
+    }
+}
